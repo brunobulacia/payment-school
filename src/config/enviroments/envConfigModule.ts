@@ -1,7 +1,15 @@
 import { ConfigModule } from "@nestjs/config";
 import { EnvConfig } from "./envConfig";
+import { Module } from "@nestjs/common";
 
-export const EnvConfigModule = ConfigModule.forRoot({
-  load: [EnvConfig],
-  isGlobal: true,
+
+@Module({
+  imports: [
+    ConfigModule.forRoot({
+      load: [EnvConfig],
+      isGlobal: true,
+    })
+  ]
 })
+export class EnvConfigModule {}
+
