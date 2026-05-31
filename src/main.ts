@@ -31,6 +31,7 @@ async function bootstrap() {
     }
   });
 
+  app.setGlobalPrefix('api');
   await app.startAllMicroservices();
   Logger.log('Microservice is listening', 'Bootstrap');
 

@@ -17,6 +17,8 @@
       "*": ["./src/*"],
       "@core/*": ["./src/core/*"],
       "@config/*": ["./src/config/*"],
+      "@database/*": ["./src/database/*"],
+
       // "@app/*": ["./src/app/*"],
       // "lib/*": ["./src/lib/*"]
     },
