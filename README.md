@@ -117,6 +117,17 @@ The API will have a server response that will be a REST API, in JSON format.
   <img src="./resource/image.png" width="700"/>
 </p>
 
+## Setting up a microservice in Docker
+
+<p> 
+  Command to make the microservice work, all this with Docker already running in the task manager!
+</p>
+
+```bash
+$ docker run -d --name mi-rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
