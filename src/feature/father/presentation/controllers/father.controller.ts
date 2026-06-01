@@ -8,13 +8,12 @@ import { FatherService } from 'feature/father/Bussines/service';
 @Controller('father')
 export class FatherController {
 
-    constructor(
-        private readonly fatherService: FatherService
-    ){}
+  constructor(
+    private readonly fatherService: FatherService
+  ){}
 
-    @Get()
-    public findAll() {
-        return this.fatherService.findAll();
-    }
-
+  @Get()
+  public findAll() {
+    return this.fatherService.findAll();
+  }
 }

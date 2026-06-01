@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import { AllExceptionsFilter } from '@core/filter';
+import { TransformResponseInterceptor } from '@core/interceptor';
 
 async function bootstrap() {
   const port = process.env.PORT || 3000;
@@ -30,6 +32,9 @@ async function bootstrap() {
       },
     }
   });
+
+  app.useGlobalInterceptors(new TransformResponseInterceptor());
+  app.useGlobalFilters(new AllExceptionsFilter());
 
   app.setGlobalPrefix('api');
   await app.startAllMicroservices();
