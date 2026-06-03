@@ -13,7 +13,6 @@ export class TransformResponseInterceptor implements NestInterceptor {
     const ctx = context.switchToHttp();
     const response = ctx.getResponse();
     const statusCode = response.statusCode;
-
     response.status(HttpStatus.OK); // Cambia el código de estado a 200 OK
 
     return next.handle().pipe( 

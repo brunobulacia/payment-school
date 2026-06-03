@@ -14,11 +14,11 @@ export class FatherController {
     private readonly fatherService: FatherService
   ){}
 
-  @HttpCode(HttpStatus.CREATED)
+  @HttpCode(HttpStatus.OK)
   @Get()
   public async findAll(): Promise<ApiResponse<Father[]>> {
     return {
-      message: 'Fathers retrieved successfully',
+      message: 'Padres obtenidos con éxito',
       data: await this.fatherService.findAll()
     }
   }
